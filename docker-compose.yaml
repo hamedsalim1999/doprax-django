@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - static:/core/static
+      - static:/app/staticfiles
     restart: always
     ports:
       - "5000:5000"
@@ -32,7 +32,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - static:/core/static
+      - static:/app/staticfiles
     networks:
       - nginx_nw
 
