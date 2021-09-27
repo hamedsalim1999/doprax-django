@@ -21,8 +21,8 @@ RUN pip install -r requirements.txt
 # collectstatic command
 # RUN python manage.py collectstatic --no-input
 # migrations command
-RUN python manage.py makemigrations
-RUN python manage.py migrate
+# RUN python manage.py makemigrations
+# RUN python manage.py migrate
 # Expose port out of continer 
 EXPOSE 5000
 CMD ["gunicorn","--bind", ":5000", "core.wsgi:application"]
