@@ -13,7 +13,8 @@ COPY . /app
 # run commnad  for install 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
- 
+# collectstatic command
+RUN python core/manage.py collectstatic --no-input
 # migrations command
 RUN python core/manage.py makemigrations
 # Expose port out of continer 
