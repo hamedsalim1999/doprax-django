@@ -10,9 +10,9 @@ RUN mkdir /app
 WORKDIR /app
 # coppy commands 
 COPY . /app
-RUN apt-get update
-RUN install postgresql-dev gcc python3-dev musl-dev
-# run commnad  for install 
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y gcc && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN pip install --upgrade pip
 RUN pip install psycopg2-binary
 RUN pip install -r requirements.txt
