@@ -5,11 +5,11 @@ FROM python:3.9.7-buster
 ENV PYTHONUNBUFFERED 1
  
 # Set working directory
-RUN mkdir /app
+RUN mkdir core
 # set working directory
-WORKDIR /app
+COPY . /core/
 # coppy commands 
-COPY . /app
+WORKDIR /core
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y netcat-openbsd gcc && \
