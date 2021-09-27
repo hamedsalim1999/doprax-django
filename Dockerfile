@@ -19,7 +19,7 @@ RUN pip install --upgrade pip
 RUN pip install psycopg2-binary
 RUN pip install -r requirements.txt
 # collectstatic command
-RUN python manage.py collectstatic --no-input
+# RUN python manage.py collectstatic --no-input
 # migrations command
 RUN python manage.py makemigrations
 RUN python manage.py migrate
