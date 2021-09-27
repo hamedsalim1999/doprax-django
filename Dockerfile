@@ -14,8 +14,6 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y netcat-openbsd gcc && \
     apt-get clean
-RUN addgroup --system user && adduser --system --no-create-home --group user
-RUN chown -R user:user /usr/src/app && chmod -R 755 /usr/src/app
 
 RUN pip install --upgrade pip
 RUN pip install psycopg2-binary
